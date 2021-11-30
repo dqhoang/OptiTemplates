@@ -4,10 +4,10 @@
         <Title>Optimizely CMS Templates</Title>
         <PackageReleaseNotes>Now with more core</PackageReleaseNotes>
         <Authors>Duy Hoang</Authors>
-        <Description>Templates for Optimizely CMS (formorly EPiServer) development</Description>
+        <Description>Templates for Optimizely CMS (formerly EPiServer) development</Description>
         <PackageType>Template</PackageType>
-        <PackageVersion>0.0.1</PackageVersion>
-        <PackageId>DuyHoang.DotNet.Templates.OptiTemplates</PackageId>
+        <PackageVersion>0.0.2</PackageVersion>
+        <PackageId>Opti.Templates</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageTags>dotnet;.NET;dotnet new;dotnet cli;Visual Studio;template;project template;c#;OptimizelyCms;Episerver;Episerver 12;UI;web app;css;html;CMS</PackageTags>
         <TargetFramework>net5.0</TargetFramework>
@@ -20,7 +20,6 @@
     <ItemGroup>
         <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
         <Compile Remove="**\*" />
-        <None Include="icon.png" Pack="true" PackagePath="\" />
         <None Include="README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
