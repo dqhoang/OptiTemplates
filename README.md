@@ -1,8 +1,6 @@
 # OptiTemplates
 
-The templates provided by Optimizely were lacking some important files that prevented it from running unless it was launched from Visual Studio.
-
-This project aims to create sound starter files following conventions laid out by the Alloy and Foundation projects.
+This project aims to create sound starter files following conventions laid out by the Alloy and Foundation projects. Also borrowing some files...
 
 The **OptiTemplates** project templates save you some time by providing minimal Optimizely CMS (EPiServer) templates (dotnet CLI and Visual Studio).
 
@@ -47,4 +45,26 @@ Launch
 
 ```
 dotnet run
+```
+
+## Dev
+
+To get started clone the repository
+
+Then install the template
+
+```
+cd OptiTemplates/templates/StarterOptiCms
+```
+
+Mac/Linux
+
+```
+dotnet new --install ./
+```
+
+Windows
+
+```
+dotnet new --install .\
 ```
