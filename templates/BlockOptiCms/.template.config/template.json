@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Duy Hoang",
+    "classifications": [ "Model", "Block" ], 
+    "groupIdentity": "OptiCMSTemplate.Model",
+    "identity": "OptiCMSTemplate.Block",
+    "name": "OptiCMS: block",
+    "shortName": "block",
+    "tags": {
+      "language": "C#",
+      "type":"item"
+    },
+    "sourceName": "BlockModel",
+    "symbols":{
+        "DataClass":{
+            "type":"parameter",
+            "defaultValue": "BlockData",
+            "replaces": "BlockData"
+        },
+        "BlockGuid":{
+            "type": "generated",
+            "generator": "guid",
+            "replaces": "BlockGuid",
+            "parameters": {
+                "format":"D"
+            }
+        }
+    }
+  }
