@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Duy Hoang",
+    "classifications": [ "Web","Empty" ],
+    "groupIdentity": "OptiCMSTemplate.Project",
+    "identity": "OptiCMSTemplate.EmptyProject",
+    "name": "OptiCMS templates: empty project",
+    "shortName": "emptyopticms",
+    "sourceName": "EmptyOptiCms",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    }
+  }
