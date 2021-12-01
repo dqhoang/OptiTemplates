@@ -9,14 +9,15 @@ The **OptiTemplates** project templates save you some time by providing minimal 
 ## Getting Started
 
 1. Make sure you have the latest version of the [.NET SDK](https://dotnet.microsoft.com/download/dotnet/) installed.
-2. Open a terminal (e.g. powershell or bash) in any directory.
-3. Install the dotnet templates.
+3. Open a terminal (e.g. powershell or bash) in any directory.
+4. Authenticate with [github](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry#authenticating-with-a-personal-access-token)
+5. Install the dotnet templates.
 
 ```
-dotnet new --install DuyHoang.DotNet.Templates.OptiTemplates --nuget-source ???
+dotnet new --install Opti.Templates --nuget-source https://nuget.pkg.github.com/dqhoang/index.json
 ```
 
-4. Install the CLI tool
+6. Install the CLI tool
 
 ```
 dotnet tool install EPiServer.Net.Cli --global --add-source https://nuget.optimizely.com/feed/packages.svc/
