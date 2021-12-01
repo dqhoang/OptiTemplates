@@ -1,38 +1,37 @@
+@using EPiServer.Framework.Web.Mvc.Html
+@using StarterOptiCms.Models.Pages
+@using StarterOptiCms.Models.ViewModels
+
 @model IPageViewModel<SitePageData>
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=10" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>StarterOptiCms</title>
-        <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon" />
-        @Html.CanonicalLink()
-        @Html.AlternateLinks()
-        <link rel="stylesheet" href="~/css/css.min.css" />
-        @Html.RequiredClientResources("Header") @*Enable components to require resources. For an example, see the view for VideoBlock.*@
-    </head>
 
-    <body>
-        @if (Model.Layout.IsInReadonlyMode)
-    {
-        await Html.RenderPartialAsync("Readonly", Model);
-    }
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StarterOptiCms</title>
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon" />
+    @Html.CanonicalLink()
+    @Html.AlternateLinks()
+    @Html.RequiredClientResources("Header")
+</head>
 
+<body>
     @await Html.RenderEPiServerQuickNavigatorAsync()
     @Html.FullRefreshPropertiesMetaData()
-        <div class="container">
-        @if (!Model.Layout.HideHeader)
+    <div class="container">
+        @if (!Model.CurrentPage.HideSiteHeader)
         {
             await Html.RenderPartialAsync("Header", Model);
         }
         @RenderBody()
-        @if (!Model.Layout.HideFooter)
+        @if (!Model.CurrentPage.HideSiteFooter)
         {
             await Html.RenderPartialAsync("Footer", Model);
         }
-        </div>
+    </div>
     @Html.RequiredClientResources("Footer")
-        <script src="~/js/script.min.js"></script>
-    </body>
+</body>
+
 </html>

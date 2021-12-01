@@ -1,41 +1,66 @@
 {
-    "$schema": "http://json.schemastore.org/template",
-    "author": "Duy Hoang",
-    "classifications": [ "Web" ],
-    "groupIdentity": "OptiCMSTemplate.Project",
-    "identity": "OptiCMSTemplate.StarterProject",
-    "name": "OptiCMS templates: starter project",
-    "shortName": "starteropticms",
-    "sourceName": "StarterOptiCms",
-    "tags": {
-      "language": "C#",
-      "type": "project"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Duy Hoang",
+  "classifications": ["Web"],
+  "groupIdentity": "OptiCMSTemplate.Project",
+  "identity": "OptiCMSTemplate.StarterProject",
+  "name": "OptiCMS templates: starter project",
+  "shortName": "starteropticms",
+  "sourceName": "StarterOptiCms",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "LocalDb": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Includes the LocalDb. Only recommended for Windows since it has SqlExpress",
+      "defaultValue": "true"
     },
-    "symbols": {
-      "skipRestore": {
-        "type": "parameter",
-        "datatype": "bool",
-        "description": "If specified, skips the automatic restore of the project on create.",
-        "defaultValue": "false"
-      },
-      "GenericMediaGUID": {
-        "type": "generated",
-        "generator": "guid",
-        "replaces": "GenericMediaGUID",
-        "parameters": {
-          "format": "D"
+    "skipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, skips the automatic restore of the project on create.",
+      "defaultValue": "false"
+    },
+    "GenericMediaGUID": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "GenericMediaGUID",
+      "parameters": {
+        "format": "D"
+      }
+    },
+    "ImageFileGUID": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "ImageFileGUID",
+      "parameters": {
+        "format": "D"
+      }
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!LocalDb)",
+          "exclude": [
+            "App_Data/StarterOptiCms.mdf",
+            "App_Data/StarterOptiCms.ldf"
+          ]
         }
-      }
-    },
-    "postActions": [
-      {
-        "condition": "(!skipRestore)",
-        "description": "Restore NuGet packages required by this project.",
-        "manualInstructions": [
-          { "text": "Run 'dotnet restore'" }
-        ],
-        "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
-        "continueOnError": true
-      }
-    ]
-  }
+      ]
+    }
+  ],
+  "postActions": [
+    {
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [{ "text": "Run 'dotnet restore'" }],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
+}

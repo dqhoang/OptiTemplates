@@ -1,26 +1,43 @@
 ﻿using EPiServer.Cms.UI.AspNetIdentity;
+using EPiServer.Data;
 using EPiServer.Web.Routing;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 
 namespace StarterOptiCms
 {
     public class Startup
     {
         private readonly IWebHostEnvironment _webHostingEnvironment;
+        private readonly IConfiguration _configuration;
 
-        public Startup(IWebHostEnvironment webHostingEnvironment)
+        public Startup(IWebHostEnvironment webHostingEnvironment, IConfiguration configuration)
         {
             _webHostingEnvironment = webHostingEnvironment;
+            _configuration = configuration;
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
             if (_webHostingEnvironment.IsDevelopment())
             {
+#if (LocalDb)
+                //Map App_Data to absolute value
+                services.PostConfigure<DataAccessOptions>(o =>
+                {
+                    o.SetConnectionString(_configuration.GetConnectionString("EPiServerDB").Replace("App_Data", Path.GetFullPath("App_Data")));
+                });
+                services.PostConfigure<ApplicationOptions>(o =>
+                {
+                    o.ConnectionStringOptions.ConnectionString = _configuration.GetConnectionString("EPiServerDB").Replace("App_Data", Path.GetFullPath("App_Data"));
+                });
+#else
                 //Add development configuration
+#endif
             }
 
             services.AddMvc();

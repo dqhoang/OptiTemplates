@@ -1,3 +1,5 @@
+using StarterOptiCms.Models.Pages;
+
 namespace StarterOptiCms.Models.ViewModels
 {
     public interface IPageViewModel<out T> where T : SitePageData

@@ -1,6 +1,5 @@
-using System;
-using EPiServer.Core;
 using StarterOptiCms.Models.Pages;
+using StarterOptiCms.Models.ViewModels;
 
 namespace StarterOptiCms
 {

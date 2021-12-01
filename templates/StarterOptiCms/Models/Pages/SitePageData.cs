@@ -5,7 +5,6 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 using EPiServer.Web;
-using StarterOptiCms.Business.Rendering;
 
 namespace StarterOptiCms.Models.Pages
 {
@@ -15,7 +14,7 @@ namespace StarterOptiCms.Models.Pages
     public abstract class SitePageData : PageData
     {
         [Display(
-            GroupName = Global.GroupNames.MetaData,
+            GroupName = "MetaData",
             Order = 100)]
         [CultureSpecific]
         public virtual string MetaTitle
@@ -33,21 +32,21 @@ namespace StarterOptiCms.Models.Pages
         }
 
         [Display(
-            GroupName = Global.GroupNames.MetaData,
+            GroupName = "MetaData",
             Order = 200)]
         [CultureSpecific]
         [BackingType(typeof(PropertyStringList))]
         public virtual IList<string> MetaKeywords { get; set; }
 
         [Display(
-            GroupName = Global.GroupNames.MetaData,
+            GroupName = "MetaData",
             Order = 300)]
         [CultureSpecific]
         [UIHint(UIHint.Textarea)]
         public virtual string MetaDescription { get; set; }
 
         [Display(
-            GroupName = Global.GroupNames.MetaData,
+            GroupName = "MetaData",
             Order = 400)]
         [CultureSpecific]
         public virtual bool DisableIndexing { get; set; }
