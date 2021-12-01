@@ -24,7 +24,7 @@ jobs:
           dotnet-version: 5.0.x
 
       - name: Build solution and generate NuGet package
-        run: dotnet pack -c Release -o ${{ env.ARTIFACTS_DIRECTORY }}
+        run: dotnet pack OptiTemplates.csproj -c Release -o ${{ env.ARTIFACTS_DIRECTORY }}
 
       - name: Push generated package to GitHub registry
         run: dotnet nuget push ${{ env.ARTIFACTS_DIRECTORY }}*.nupkg\
