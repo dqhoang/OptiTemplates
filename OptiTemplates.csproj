@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <Title>Optimizely CMS Templates</Title>
         <PackageReleaseNotes>Now with more core</PackageReleaseNotes>
@@ -15,12 +14,11 @@
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
         <NoWarn>$(NoWarn);NU5128</NoWarn>
+        <RepositoryUrl>https://github.com/dqhoang/OptiTemplates</RepositoryUrl>
     </PropertyGroup>
-
     <ItemGroup>
         <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
         <Compile Remove="**\*" />
         <None Include="README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
-
 </Project>
