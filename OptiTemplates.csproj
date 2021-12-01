@@ -6,7 +6,7 @@
         <Authors>Duy Hoang</Authors>
         <Description>Templates for Optimizely CMS (formerly EPiServer) development</Description>
         <PackageType>Template</PackageType>
-        <PackageVersion>0.0.2</PackageVersion>
+        <PackageVersion>0.0.3</PackageVersion>
         <PackageId>Opti.Templates</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageTags>dotnet;.NET;dotnet new;dotnet cli;Visual Studio;template;project template;c#;OptimizelyCms;Episerver;Episerver 12;UI;web app;css;html;CMS</PackageTags>
