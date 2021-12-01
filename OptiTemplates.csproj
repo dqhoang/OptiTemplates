@@ -15,6 +15,7 @@
         <ContentTargetFolders>content</ContentTargetFolders>
         <NoWarn>$(NoWarn);NU5128</NoWarn>
         <RepositoryUrl>https://github.com/dqhoang/OptiTemplates</RepositoryUrl>
+        <RespositoryType>git</RespositoryType>
     </PropertyGroup>
     <ItemGroup>
         <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
